@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import ProductService from "../services/ProductService";
+import { ProductRepository } from "../repositories/ProductRepository";
+import { AppDataSource } from "../data-source";
+import Product from "../entity/Product";
 
 class ProductController{
     private productService: ProductService;
@@ -12,9 +15,15 @@ class ProductController{
         // try{
             const {name, price, description, color, size} = req.body;
             
-            const product = await this.productService.create({
+            // const product = await this.productService.create({
+            //     name, price, description, color, size
+            // });
+
+            const product = AppDataSource.getRepository(Product).create({
                 name, price, description, color, size
             });
+            await AppDataSource.getRepository(Product).save(product);
+            // return product;
 
             return res.status(201).json(product);
         // } catch(error){

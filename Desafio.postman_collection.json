@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "1a106831-b6b1-43a0-9486-23563aced7af",
+		"name": "Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Bola Vermelha\",\r\n  \"price\": 19.99,\r\n  \"description\": \"Product description\",\r\n  \"color\": \"Blue\",\r\n  \"size\": \"Medium\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3335/api/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "3335",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Product Name\",\r\n    \"price\": 19.99,\r\n    \"description\": \"Product description\",\r\n    \"color\": \"White\",\r\n    \"size\": \"Larger\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3335/api/products/3f58c6db-0545-42a0-b448-9f026ab431fe",
+					"host": [
+						"localhost"
+					],
+					"port": "3335",
+					"path": [
+						"api",
+						"products",
+						"3f58c6db-0545-42a0-b448-9f026ab431fe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3f58c6db-0545-42a0-b448-9f026ab431fe\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3335/api/products/",
+					"host": [
+						"localhost"
+					],
+					"port": "3335",
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
